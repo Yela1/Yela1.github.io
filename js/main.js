@@ -48,7 +48,6 @@ $(document).ready(function() {
 });
 
 function init(){
-    $.getJSON("data.json",ready);
     $.getJSON("data-s.json",readyTo);
 }
 function readyTo(data){
@@ -63,21 +62,8 @@ function readyTo(data){
         out +='</div>';
     }
     $('.under-two').html(out);
-}
-function ready(data){
-    var out ='';
-    for(var key in data){
-        out += '<div class="col-md not two">';
-        out += '<a href="book.html">';
-        out += `<img src="img/${data[key].img}">`;
-        out += `<h6>${data[key].name}</h6>`;
-        out += `<p>${data[key].autor}<br>from: <span class="price">${data[key].price}</span></p>`;
-        out += '</a>';
-        out +='</div>';
-    }
     $('.under').html(out);
-}   
-
+}
 
 function nextSlide() {
     if (slideNowTwo == 4) {
